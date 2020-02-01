@@ -2,16 +2,24 @@ import React, { Component } from "react";
 import "./styles.css";
 
 const UserInput = props => {
+  const inputStyle = {
+    border: "2px solid red"
+  };
   return (
     <div>
-      <input type="text" onChange={props.changed} value={props.currentName} />
+      <input
+        type="text"
+        style={inputStyle}
+        onChange={props.changed}
+        value={props.currentName}
+      />
     </div>
   );
 };
 
 const UserOutput = props => {
   return (
-    <div>
+    <div className="UserOutput">
       <p> UserName: {props.userName} </p>
       <p> Some random text </p>
     </div>
@@ -30,7 +38,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Hello CodeSandbox</h1>
+        <h1>React,Component,props,state</h1>
         <h2>Start editing to see some magic happen!</h2>
         <UserInput
           changed={this.usernameChangedHandler}
